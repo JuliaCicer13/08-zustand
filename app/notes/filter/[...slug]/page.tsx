@@ -1,4 +1,3 @@
-import SidebarNotes from "../@sidebar/SidebarNotes";
 import { QueryClient, HydrationBoundary, dehydrate } from  "@tanstack/react-query";
 import NotesClient from "./Notes.client";
 
