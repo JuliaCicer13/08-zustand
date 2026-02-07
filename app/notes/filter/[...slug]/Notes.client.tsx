@@ -9,7 +9,7 @@ import Modal from "@/components/Modal/Modal";
 import NoteList from '@/components/NoteList/NoteList';
 import {Toaster} from "react-hot-toast";
 import Pagination from '@/components/Pagination/Pagination';
-import SidebarNotes from "../@sidebar/default";
+import SidebarNotes from "../@sidebar/SidebarNotes";
 
  type NotesClientProps = {
       tag: string;
