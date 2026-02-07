@@ -1,0 +1,28 @@
+/* [project]/app/home/Home.module.css [app-client] (css) */
+.Home-module__25bE0G__main {
+  flex: 1;
+}
+
+.Home-module__25bE0G__container {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px 16px;
+}
+
+.Home-module__25bE0G__title {
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.Home-module__25bE0G__description {
+  color: #444;
+  margin-bottom: 16px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+/*# sourceMappingURL=app_home_Home_module_be5685d2.css.map*/

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/%D0%9E%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/ITdevelop/08-zustand/app/profile/edit/page.tsx"],"sourcesContent":["import { Metadata } from \"next\";\r\n\r\nexport const metadata: Metadata = {\r\n     title: 'Edit profile',\r\n     description: 'Edit your user details and settings',\r\n};\r\n\r\nconst EditProfile = () => {\r\n    return <div>EditProfile</div>\r\n};\r\n\r\nexport default EditProfile;\r\n"],"names":[],"mappings":";;;;;;;;AAEO,MAAM,WAAqB;IAC7B,OAAO;IACP,aAAa;AAClB;AAEA,MAAM,cAAc;IAChB,qBAAO,8OAAC;kBAAI;;;;;;AAChB;uCAEe"}}]
+}

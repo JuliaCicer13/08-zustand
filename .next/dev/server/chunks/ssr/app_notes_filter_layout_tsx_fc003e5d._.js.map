@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/%D0%9E%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/ITdevelop/08-zustand/app/notes/filter/layout.tsx"],"sourcesContent":["type Props = {\r\n  children: React.ReactNode;\r\n   sidebar: React.ReactNode;\r\n};\r\n\r\nconst NotesLayout = ({ children ,  sidebar }: Props) => {\r\n  return (\r\n    <section>\r\n         <aside>{sidebar}</aside>\r\n      <div>{children}</div>\r\n    </section>\r\n  );\r\n};\r\n\r\nexport default NotesLayout;"],"names":[],"mappings":";;;;;;AAKA,MAAM,cAAc,CAAC,EAAE,QAAQ,EAAI,OAAO,EAAS;IACjD,qBACE,8OAAC;;0BACI,8OAAC;0BAAO;;;;;;0BACX,8OAAC;0BAAK;;;;;;;;;;;;AAGZ;uCAEe"}}]
+}

@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 22, "column": 0}, "map": {"version":3,"sources":["file:///D:/%D0%9E%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/ITdevelop/06-notehub-nextjs/app/notes/%5Bid%5D/page.tsx"],"sourcesContent":["type Props = {\r\n    params: Promise<{id: string}>;\r\n};\r\n\r\n\r\nconst newFolder = async ({params}: Props) => {\r\n    const id = await params;\r\n    console.log(\"note id\", id);\r\n    return (\r\n        <>\r\n           <p>I am new folder </p>\r\n        </>\r\n    )\r\n}\r\nexport default newFolder"],"names":[],"mappings":";;;;;;AAKA,MAAM,YAAY,OAAO,EAAC,MAAM,EAAQ;IACpC,MAAM,KAAK,MAAM;IACjB,QAAQ,GAAG,CAAC,WAAW;IACvB,qBACI;kBACG,cAAA,8OAAC;sBAAE;;;;;;;AAGd;uCACe"}}]
+}

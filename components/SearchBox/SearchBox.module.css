@@ -1,8 +1,12 @@
 .input {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
   flex: 1;
-  max-width: 240px;
+  max-width: 540px;
   padding: 6px 12px;
   font-size: 16px;
   border: 1px solid #ced4da;
   border-radius: 4px;
+  background-color: rgb(229, 215, 241);
 }

@@ -3,6 +3,7 @@ import Home from "../components/Home/Home";
 import css from "../components/Home/Home.module.css";
 import { fetchNotes } from "@/lib/api";
 
+
 export default async function NotePage () {
    const queryClient = new QueryClient();
 

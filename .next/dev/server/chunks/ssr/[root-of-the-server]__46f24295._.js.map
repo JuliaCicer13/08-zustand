@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 18, "column": 0}, "map": {"version":3,"sources":["file:///D:/%D0%9E%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/ITdevelop/06-notehub-nextjs/app/home/page.tsx"],"sourcesContent":["import css from \"./Home.module.css\";\n\nexport default function Home() {\n  return (\n    <div>\n      <main>\n  <div className={css.container}>\n    <h1 className={css.title}>Welcome to NoteHub</h1>\n    <p className={css.description}>\n      NoteHub is a simple and efficient application designed for managing\n      personal notes. It helps keep your thoughts organized and accessible\n      in one place, whether you are at home or on the go.\n    </p>\n    <p className={css.description}>\n      The app provides a clean interface for writing, editing, and browsing\n      notes. With support for keyword search and structured organization,\n      NoteHub offers a streamlined experience for anyone who values clarity\n      and productivity.\n    </p>\n  </div>\n</main>\n    </div>\n  );\n}\n"],"names":[],"mappings":";;;;;;;;;;;;AAEe,SAAS;IACtB,qBACE,8OAAC;kBACC,cAAA,8OAAC;sBACL,cAAA,8OAAC;gBAAI,WAAW,IAAI,SAAS;;kCAC3B,8OAAC;wBAAG,WAAW,IAAI,KAAK;kCAAE;;;;;;kCAC1B,8OAAC;wBAAE,WAAW,IAAI,WAAW;kCAAE;;;;;;kCAK/B,8OAAC;wBAAE,WAAW,IAAI,WAAW;kCAAE;;;;;;;;;;;;;;;;;;;;;;AAUnC"}}]
+}

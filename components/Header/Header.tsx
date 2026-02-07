@@ -12,6 +12,12 @@ return (
           <li> 
            <Link href='/notes/filter/all'>Notes</Link>
             </li>
+            <li>
+           <Link href='/profile/edit'>Profile</Link> 
+            </li>
+            <li>
+            <Link href='/about'>About</Link>
+            </li>
         </ul>
     </nav>
 </header>

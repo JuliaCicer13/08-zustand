@@ -1,0 +1,28 @@
+/* [project]/app/home/page.module.css [app-client] (css) */
+.page-module__cBpJ1G__main {
+  flex: 1;
+}
+
+.page-module__cBpJ1G__container {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px 16px;
+}
+
+.page-module__cBpJ1G__title {
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.page-module__cBpJ1G__description {
+  color: #444;
+  margin-bottom: 16px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
+/*# sourceMappingURL=app_home_page_module_b5c5df0d.css.map*/
