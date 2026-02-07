@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { TAGS } from '@/constants/tags';
 import css from '../@sidebar/SidebarNotes.module.css';
 
-const SidebarNotes = async () => {
+ export default function SidebarNotes () {
   return (
     <ul className={css.menuList}>
       <li className={css.menuItem }>
@@ -19,4 +19,3 @@ const SidebarNotes = async () => {
   );
 };
 
-export default SidebarNotes;
