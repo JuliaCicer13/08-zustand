@@ -5,8 +5,8 @@ import { useParams } from 'next/navigation';
 import { fetchNoteById } from "@/lib/api";
 
 const NoteDetailsClient = () => {
-   const { id } = useParams<{ id: string }>();
-
+   const params = useParams<{ id: string }>();
+   const id = params;
    const { data: note, isLoading, error } = useQuery({
     queryKey: ["note", id],
     queryFn: () => fetchNoteById(id),

@@ -6,7 +6,7 @@ import css from './SidebarNotes.module.css';
 const tags: NoteTag[] = ['Todo', 'Work', 'Personal', 'Meeting', 'Shopping'];
 
 
-export default async function SidebarNotes() {
+export default function SidebarNotes() {
   return (
     <ul className={css.menuList}>
       <li className={css.menuItem}>
