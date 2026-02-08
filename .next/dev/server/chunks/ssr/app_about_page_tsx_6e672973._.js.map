@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/%D0%9E%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/ITdevelop/08-zustand/app/about/page.tsx"],"sourcesContent":["import { Metadata } from \"next\";\r\n\r\nexport const metadata: Metadata = {\r\n     title: 'Page About',\r\n     description: 'This profile contains information about us',\r\n};\r\n\r\nconst PageAbout = () => {\r\n    return <div>PageAbout</div>\r\n};\r\n\r\nexport default PageAbout;\r\n"],"names":[],"mappings":";;;;;;;;AAEO,MAAM,WAAqB;IAC7B,OAAO;IACP,aAAa;AAClB;AAEA,MAAM,YAAY;IACd,qBAAO,8OAAC;kBAAI;;;;;;AAChB;uCAEe"}}]
-}

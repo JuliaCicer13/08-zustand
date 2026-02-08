@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///D:/%D0%9E%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/ITdevelop/08-zustand/app/notes/%5Bid%5D/error.tsx"],"sourcesContent":["\"use client\";\r\n\r\ntype Props = {\r\nerror: Error ;\r\nreset: () => void;\r\n}\r\n\r\n\r\nconst Error = ({error, reset}: Props) => {\r\n return (\r\n    <div>\r\n        <p>Could not fetch the list of notes. {error.message}</p>\r\n        <button onClick={reset}>Спробувати знову</button>\r\n    </div>\r\n )\r\n}\r\nexport default Error"],"names":[],"mappings":";;;;;AAAA;;AAQA,MAAM,QAAQ,CAAC,EAAC,KAAK,EAAE,KAAK,EAAQ;IACnC,qBACG,8OAAC;;0BACG,8OAAC;;oBAAE;oBAAoC,MAAM,OAAO;;;;;;;0BACpD,8OAAC;gBAAO,SAAS;0BAAO;;;;;;;;;;;;AAGhC;uCACe"}}]
-}

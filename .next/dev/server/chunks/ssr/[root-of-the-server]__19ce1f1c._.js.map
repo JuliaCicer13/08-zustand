@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 22, "column": 0}, "map": {"version":3,"sources":["file:///D:/%D0%9E%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5/ITdevelop/06-notehub-nextjs/app/notes/page.tsx"],"sourcesContent":["import type { Note } from \"@/types/note\";\r\n\r\ntype Props = {\r\n  item: Note;\r\n};\r\n\r\nconst NoteItem = ({ item }: Props) => {\r\n  return (\r\n    <li>\r\n      <p>{item.title}</p>\r\n    </li>\r\n  );\r\n}\r\n\r\nexport default NoteItem;"],"names":[],"mappings":";;;;;;AAMA,MAAM,WAAW,CAAC,EAAE,IAAI,EAAS;IAC/B,qBACE,8OAAC;kBACC,cAAA,8OAAC;sBAAG,KAAK,KAAK;;;;;;;;;;;AAGpB;uCAEe"}}]
-}
