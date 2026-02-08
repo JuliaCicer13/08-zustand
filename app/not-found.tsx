@@ -3,6 +3,12 @@ import css from "./page.module.css"
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Metadata from "next";
+
+export const metadata: Metadata = {
+    title: "Error!",
+    description: "Something went wrong! Refresh your page please or try again.",
+};
 
 const NotFound = () => {
 
