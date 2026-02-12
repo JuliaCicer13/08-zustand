@@ -3,6 +3,28 @@ import css from "./page.module.css"
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+        title: "Error of App",
+        description: "There is soemthing went wrong . Please try again.",
+     openGraph: {
+        title: `Note Hub`,
+        description: "There are some notes for your attention",
+        url: `https://notehub.com/notes`,
+        siteName: 'NoteHub',
+        images: [
+          {
+            url: 'https://ac.goit.global/fullstack/react/og-meta.jpg',
+            width: 1200,
+            height: 630,
+            alt: "Note Hub",
+          },
+        ],
+        type: 'article',
+      },
+    }
+ 
 
 const NotFound = () => {
 
