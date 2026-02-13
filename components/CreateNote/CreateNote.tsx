@@ -1,34 +1,19 @@
 "use client";
 import {useMutation, useQueryClient} from "@tanstack/react-query";
-import type { Note } from "@/types/note";
 import css from "../CreateNote/CreateNote.module.css";
 import NoteForm from "../NoteForm/NoteForm";
-import { useRouter } from 'next/navigation';
-import {}
-interface CreateNotesPage{
-  id: string;
-}
+import { createNote } from "../../lib/api";
+import type { CreateNotePayload } from "../../lib/api";
 
-export default function CreateNote ({ id }: CreateNotesPage) {
-    const router = useRouter();
-    const {
-    data: note,
-    isLoading,
-    error,
-  } = useQuery({
-    queryKey: ['note', id],
-    queryFn: () => fetchNoteById(id),
-    refetchOnMount: false,
-  });
-
-
-  const closeModal = () => {
-    router.back();
-  };
-
-  if (isLoading) return <p>Loading, please wait...</p>;
-  if (error || !note) return <p>Something went wrong.</p>;
-
+export default function CreateNote () {
+   const queryClient = useQueryClient();
+   
+   const {mutate: createNoteM} = useMutation({
+      mutationFn: (payload: CreateNotePayload) => createNote(payload),
+      onSuccess: () => {
+       queryClient.invalidateQueries({queryKey: ["notes"]})
+      }
+ })
 
     return ( 
         <main className={css.main}>

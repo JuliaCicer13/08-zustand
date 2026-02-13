@@ -9,12 +9,11 @@ interface FetchNotesResponse {
     totalPages: number;
 }
 
-interface CreateNotePayload {
+export interface CreateNotePayload {
     title: string;
     content: string;
     tag: string;
 }
-
 
 const api = axios.create({
   baseURL: BASE_URL,
