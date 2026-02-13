@@ -1,11 +1,12 @@
+'use client';
 import css from "../NoteForm/NoteForm.module.css"
 import { useId } from "react";
-import { Formik, Form, Field} from "formik";
 import { useMutation, useQueryClient} from '@tanstack/react-query';
 import * as Yup from "yup";
 import {createNote} from "../../lib/api"
 import {ErrorMessage} from "formik";
 import Loader from "../Loader/loader";
+import { useNoteDraftStore } from '@/lib/stores/noteStore';
 
 interface NoteFormProps {
 
@@ -27,10 +28,24 @@ const initialValues: FormValues = {
 export default function NoteForm ({onClose}: NoteFormProps) {
 const queryClient = useQueryClient();
 const fieldId = useId();
+const { draft, setDraft, clearDraft } = useNoteDraftStore();
+
+  const handleChange = (
+    event: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
+  ) => {
+	  // 4. Коли користувач змінює будь-яке поле форми — оновлюємо стан
+    setDraft({
+      ...draft,
+      [event.target.name]: event.target.value,
+    });
+  };
 
 const {mutate, isPending} = useMutation({
   mutationFn: createNote,
   onSuccess: () => {
+    clearDraft();
     queryClient.invalidateQueries({queryKey: ["notes"]});
     onClose();
   },
@@ -51,16 +66,20 @@ const handleSubmit = (values: FormValues) => {
 };
 
 return (
-<Formik initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={handleSubmit}>
-  <Form className={css.form}>
-  <div className={css.formGroup}>
-    <label htmlFor={`${fieldId}-title`}>Title</label>
-    <Field id="title" type="text" name="title" className={css.input} />
+   <form className={styles.form} action={handleSubmit}>
+      <label className={styles.label}>
+        Title
+        <input type="text" name="title" defaultValue={draft?.title} onChange={handleChange} />
+      </label>
+
+      <label className={styles.label}>
+        Content
+        <textarea name="content" defaultValue={draft?.content} onChange={handleChange}></textarea>
+      </label>
+
     <ErrorMessage name="title" component="p" className={css.error}
     />
-  </div>
+  </form>
 
   <div className={css.formGroup}>
     <label htmlFor="content">Content</label>
@@ -69,13 +88,14 @@ return (
       name="content"
       rows={8}
       className={css.textarea}
+      defaultValue={draft?.title} onChange={handleChange}
     />
      <ErrorMessage name="content" component="p" className={css.error}/>
   </div>
 
   <div className={css.formGroup}>
     <label htmlFor="tag">Tag</label>
-    <Field as="select" id={`${fieldId}-tag`} name="tag" className={css.select}>
+    <Field as="select" id={`${fieldId}-tag`} name="tag" className={css.select} defaultValue={draft?.title} onChange={handleChange}>
       <option value="Todo">Todo</option>
       <option value="Work">Work</option>
       <option value="Personal">Personal</option>
@@ -91,6 +111,4 @@ return (
      {isPending ? <Loader/> : "Create note" }
     </button>
   </div>
-  </Form>
-</Formik>
   )}

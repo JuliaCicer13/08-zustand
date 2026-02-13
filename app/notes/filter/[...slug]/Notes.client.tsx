@@ -10,18 +10,16 @@ import NoteList from '@/components/NoteList/NoteList';
 import {Toaster} from "react-hot-toast";
 import Pagination from '@/components/Pagination/Pagination';
 import SidebarNotes from "../@sidebar/default";
+import Link from 'next/link';
 
  type NotesClientProps = {
       tag: string;
 }
 
 export default function NotesClient({tag}: NotesClientProps) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [search, setSearchQuery] = useState<string>("");
   const [page, setPage] = useState(1);
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
 
 
   const handleSearch = useDebouncedCallback(
@@ -54,14 +52,11 @@ return (
         onPageChange={setPage}
       />
     )}
-    <button onClick={openModal} >Create note +</button>
+    <Link href="/notes/action/create">Create note</Link>
   </header>
     {isSuccess && results.length > 0 && ( <NoteList notes={results}/>)}
      <Toaster position="top-right" reverseOrder={false}/>
-     {isModalOpen && (<Modal onClick={closeModal} onClose={closeModal}>
-      <NoteForm onClose={closeModal}/>
-     </Modal>
-     )}
+    
 </div>
    
   )

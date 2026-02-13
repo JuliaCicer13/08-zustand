@@ -5,11 +5,10 @@ import css from './SidebarNotes.module.css';
 const tags: NoteTag[] = ['Todo', 'Work', 'Personal', 'Meeting', 'Shopping'];
 
 
-export default async function SidebarNotes() {
+export default function SidebarNotes() {
 
   return (
     <>
-        <Link href="/notes/action/create">Create note</Link>
         <ul className={css.menuList}>
       <li className={css.menuItem}>
         <Link href={`/notes/filter/all`} className={css.menuLink}>
