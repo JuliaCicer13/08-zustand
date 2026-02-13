@@ -6,7 +6,7 @@ type Props = {
   params: Promise<{ id: string }>;
 };
 export default async function NotePage ({ params }: Props) {
-    const {id} = await params;
+   const {id} = await params;
    const queryClient = new QueryClient();
   
 
