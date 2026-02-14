@@ -1,17 +1,17 @@
 import {create} from 'zustand';
-import { NewNoteData } from '../api';
+import type { CreateNotePayload } from '../api';
 import { persist } from 'zustand/middleware';
 
 type NoteDraftStore = {
-  draft: NewNoteData;
-  setDraft: (note: NewNoteData) => void;
+  draft: CreateNotePayload;
+  setDraft: (note: CreateNotePayload) => void;
   clearDraft: () => void;
 };
 
-const initialDraft: NewNoteData = {
+const initialDraft = {
   title: '',
   content: '',
-  categoryId: '',
+  tag: 'Todo',
 };
 
 export const useNoteDraftStore = create<NoteDraftStore>()(

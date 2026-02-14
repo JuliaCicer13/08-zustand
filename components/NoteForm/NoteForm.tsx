@@ -7,7 +7,7 @@ import { useNoteDraftStore } from '@/lib/stores/noteStore';
 import Loader from "@/app/loading"
 
 interface NoteFormProps {
- onClose: () => void;
+ onClose?: () => void;
 }
 
 
@@ -32,7 +32,7 @@ const {mutate, isPending} = useMutation({
   onSuccess: () => {
     clearDraft();
     queryClient.invalidateQueries({queryKey: ["notes"]});
-    onClose();
+    onClose?.();
   },
 });
 
@@ -86,9 +86,7 @@ return (
       {isPending ? <Loader/> : "Create note"}
     </button>
   </div>
-
   </form>
-
   </>
-  
+
   )}

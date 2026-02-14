@@ -1,6 +1,7 @@
 import NoteForm from "@/components/NoteForm/NoteForm";
 import CreateNote from "@/components/CreateNote/CreateNote";
 import type { Metadata } from "next";
+import Modal from "@/components/Modal/Modal";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,7 +27,10 @@ export default function NotePage (){
       return (
       <>
        <CreateNote/>;
-         <NoteForm onClose={closeModal}/>
+       <Modal onClick={close} onClose={close}>
+         <NoteForm/>
+       </Modal>
+        
       </> 
       ) 
    }

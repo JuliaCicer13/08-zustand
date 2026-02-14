@@ -4,8 +4,6 @@ import { useState } from 'react'
 import SearchBox from "@/components/SearchBox/SearchBox";
 import { keepPreviousData, useQuery } from '@tanstack/react-query';
 import { useDebouncedCallback } from 'use-debounce';
-import NoteForm from '@/components/NoteForm/NoteForm';
-import Modal from "@/components/Modal/Modal";
 import NoteList from '@/components/NoteList/NoteList';
 import {Toaster} from "react-hot-toast";
 import Pagination from '@/components/Pagination/Pagination';
@@ -56,7 +54,6 @@ return (
   </header>
     {isSuccess && results.length > 0 && ( <NoteList notes={results}/>)}
      <Toaster position="top-right" reverseOrder={false}/>
-    
 </div>
    
   )
