@@ -44,20 +44,27 @@ const handleSubmit = (formData: FormData) => {
     };
       mutate(values);
 };
- const handleCancel = () => router.push('/notes/action/create');
+ const handleCancel = () => router.back();
 
 return (
   <>
      <form className={css.form} action={handleSubmit}>
       <label className={css.label}>
         <h2 className={css.text}>Title</h2>
-      
-        <input className={css.input} type="text" name="title" defaultValue={draft?.title} onChange={handleChange} />
+        <input 
+           className={css.input} 
+           type="text" name="title" 
+           defaultValue={draft?.title} 
+           onChange={handleChange} />
       </label>
 
-      <label className={css.label}>
+      <label htmlFor="content" className={css.label}>
             <h2 className={css.text}>Content</h2>
-        <textarea className={css.textarea} name="content" defaultValue={draft?.content} onChange={handleChange}></textarea>
+        <textarea 
+          className={css.textarea} 
+          name="content" defaultValue={draft?.content} 
+          onChange={handleChange}>
+        </textarea>
       </label>
         <div className={css.formGroup}>
     <label htmlFor="content">Content</label>
@@ -66,13 +73,13 @@ return (
       name="content"
       rows={8}
       className={css.textarea}
-      defaultValue={draft?.title} onChange={handleChange}
+      defaultValue={draft?.content} onChange={handleChange}
     />
   </div>
 
   <div className={css.formGroup}>
-    <label htmlFor="tag">Tag</label>
-    <select id={`${fieldId}-tag`} name="tag" className={css.select} defaultValue={draft?.title} onChange={handleChange}>
+    <label htmlFor={`${fieldId}-tag`}>Tag</label>
+    <select id={`${fieldId}-tag`} name="tag" className={css.select} defaultValue={draft?.tag} onChange={handleChange}>
       <option value="Todo">Todo</option>
       <option value="Work">Work</option>
       <option value="Personal">Personal</option>
