@@ -6,7 +6,7 @@ import Link from 'next/link';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-        title: "Error of App",
+        title: "Type
         description: "There is soemthing went wrong . Please try again.",
      openGraph: {
         title: `Note Hub`,
