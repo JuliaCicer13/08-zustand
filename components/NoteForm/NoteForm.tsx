@@ -5,13 +5,12 @@ import { useMutation, useQueryClient} from '@tanstack/react-query';
 import {createNote} from "../../lib/api"
 import { useNoteDraftStore } from '@/lib/stores/noteStore';
 import Loader from "@/app/loading"
-
-interface NoteFormProps {
- onClose?: () => void;
-}
+import { useRouter } from 'next/navigation';
 
 
-export default function NoteForm ({onClose}: NoteFormProps) {
+
+export default function NoteForm () {
+const router = useRouter();
 const queryClient = useQueryClient();
 const fieldId = useId();
 const { draft, setDraft, clearDraft } = useNoteDraftStore();
@@ -32,7 +31,7 @@ const {mutate, isPending} = useMutation({
   onSuccess: () => {
     clearDraft();
     queryClient.invalidateQueries({queryKey: ["notes"]});
-    onClose?.();
+     router.push('/notes/action/create');
   },
 });
 
@@ -45,18 +44,20 @@ const handleSubmit = (formData: FormData) => {
     };
       mutate(values);
 };
+ const handleCancel = () => router.push('/notes/action/create');
 
 return (
   <>
      <form className={css.form} action={handleSubmit}>
       <label className={css.label}>
-        Title
-        <input type="text" name="title" defaultValue={draft?.title} onChange={handleChange} />
+        <h2 className={css.text}>Title</h2>
+      
+        <input className={css.input} type="text" name="title" defaultValue={draft?.title} onChange={handleChange} />
       </label>
 
       <label className={css.label}>
-        Content
-        <textarea name="content" defaultValue={draft?.content} onChange={handleChange}></textarea>
+            <h2 className={css.text}>Content</h2>
+        <textarea className={css.textarea} name="content" defaultValue={draft?.content} onChange={handleChange}></textarea>
       </label>
         <div className={css.formGroup}>
     <label htmlFor="content">Content</label>
@@ -81,7 +82,7 @@ return (
   </div>
 
   <div className={css.actions}>
-    <button type="button" className={css.cancelButton} onClick={onClose}> Cancel</button>
+    <button type="button" className={css.cancelButton} onClick={handleCancel}> Cancel</button>
     <button type="submit" className={css.submitButton} disabled={isPending}>
       {isPending ? <Loader/> : "Create note"}
     </button>

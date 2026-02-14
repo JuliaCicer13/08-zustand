@@ -41,6 +41,7 @@ export default function NotesClient({tag}: NotesClientProps) {
 return (
  <div>
   <header>
+      <Link href="/notes/action/create">Create note</Link>
     <SearchBox value={search} onChange={handleSearch}/>
     <SidebarNotes/>
     {isSuccess && totalPages > 1 && (
@@ -50,7 +51,7 @@ return (
         onPageChange={setPage}
       />
     )}
-    <Link href="/notes/action/create">Create note</Link>
+  
   </header>
     {isSuccess && results.length > 0 && ( <NoteList notes={results}/>)}
      <Toaster position="top-right" reverseOrder={false}/>

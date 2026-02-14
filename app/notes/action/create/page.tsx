@@ -27,10 +27,7 @@ export default function NotePage (){
       return (
       <>
        <CreateNote/>;
-       <Modal onClick={close} onClose={close}>
          <NoteForm/>
-       </Modal>
-        
       </> 
       ) 
    }
