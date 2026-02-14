@@ -7,10 +7,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
         title: "Type Error 404",
-        description: "Page is not find 404!",
+        description: "Page is not find here 404!",
      openGraph: {
-        title: `Note Hub`,
-        description: "There are some notes for your attention",
+        title: `Type Error`,
+        description: "Page is not find here . Code with Type Error 404",
         url: `https://notehub.com/notes`,
         siteName: 'NoteHub',
         images: [
