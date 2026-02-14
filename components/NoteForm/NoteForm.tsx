@@ -3,7 +3,7 @@ import css from "../NoteForm/NoteForm.module.css"
 import { useId } from "react";
 import { useMutation, useQueryClient} from '@tanstack/react-query';
 import {createNote} from "../../lib/api"
-import { useNoteDraftStore } from '@/lib/stores/noteStore';
+import { useNoteDraftStore } from "@/lib/store/noteStore";
 import Loader from "@/app/loading"
 import { useRouter } from 'next/navigation';
 
