@@ -8,6 +8,7 @@ import Loader from "@/app/loading"
 import { useRouter } from 'next/navigation';
 
 
+
 export default function NoteForm () {
 const router = useRouter();
 const queryClient = useQueryClient();
@@ -53,6 +54,7 @@ return (
         <input 
            className={css.input} 
            type="text" name="title" 
+           defaultValue={draft.title} 
            onChange={handleChange} />
       </label>
 
@@ -60,14 +62,14 @@ return (
             <h2 className={css.text}>Content</h2>
         <textarea 
           className={css.textarea} 
-          name="content" 
+          name="content" defaultValue={draft.content} 
           onChange={handleChange}>
         </textarea>
       </label>
 
   <div className={css.formGroup}>
     <label htmlFor={`${fieldId}-tag`}>Tag</label>
-    <select id={`${fieldId}-tag`} name="tag" className={css.select} onChange={handleChange}>
+    <select id={`${fieldId}-tag`} name="tag" className={css.select} defaultValue={draft.tag} onChange={handleChange}>
       <option value="Todo">Todo</option>
       <option value="Work">Work</option>
       <option value="Personal">Personal</option>

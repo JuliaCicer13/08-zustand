@@ -1,16 +1,20 @@
-'use client';
 import css from "./page.module.css"
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { Metadata } from "next";
 
+
+export const metadata: Metadata = {
+    title: "404 | NoteHub",
+    description: "Page not found",
+};
 
 const NotFound = () => {
 
     const router = useRouter();
 
     useEffect(() => {
-        document.title = "404 | NoteHub";
         const timer = setTimeout(() => router.push('/'), 3000);
         return () => clearTimeout(timer);
     }, [router]);
