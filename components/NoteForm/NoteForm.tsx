@@ -58,11 +58,11 @@ return (
            onChange={handleChange} />
       </label>
 
-      <label htmlFor="content" className={css.label}>
+      <label htmlFor="name"className={css.label}>
             <h2 className={css.text}>Content</h2>
         <textarea 
           className={css.textarea} 
-          name="content" defaultValue={draft?.content} 
+          name="name" defaultValue={draft?.content} 
           onChange={handleChange}>
         </textarea>
       </label>
