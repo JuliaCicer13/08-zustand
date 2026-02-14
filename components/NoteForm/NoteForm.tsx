@@ -66,13 +66,14 @@ const handleSubmit = (values: FormValues) => {
 };
 
 return (
-   <form className={styles.form} action={handleSubmit}>
-      <label className={styles.label}>
+  <>
+     <form className={css.form} action={handleSubmit}>
+      <label className={css.label}>
         Title
         <input type="text" name="title" defaultValue={draft?.title} onChange={handleChange} />
       </label>
 
-      <label className={styles.label}>
+      <label className={css.label}>
         Content
         <textarea name="content" defaultValue={draft?.content} onChange={handleChange}></textarea>
       </label>
@@ -83,7 +84,7 @@ return (
 
   <div className={css.formGroup}>
     <label htmlFor="content">Content</label>
-    <Field as="textarea"
+    <input as="textarea"
       id="content"
       name="content"
       rows={8}
@@ -95,13 +96,13 @@ return (
 
   <div className={css.formGroup}>
     <label htmlFor="tag">Tag</label>
-    <Field as="select" id={`${fieldId}-tag`} name="tag" className={css.select} defaultValue={draft?.title} onChange={handleChange}>
+    <input as="select" id={`${fieldId}-tag`} name="tag" className={css.select} defaultValue={draft?.title} onChange={handleChange}>
       <option value="Todo">Todo</option>
       <option value="Work">Work</option>
       <option value="Personal">Personal</option>
       <option value="Meeting">Meeting</option>
       <option value="Shopping">Shopping</option>
-    </Field>
+    </input>
      <ErrorMessage name="tag" component="p" className={css.error}/>
   </div>
 
@@ -111,4 +112,6 @@ return (
      {isPending ? <Loader/> : "Create note" }
     </button>
   </div>
+  </>
+  
   )}
